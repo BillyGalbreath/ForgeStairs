@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "blocks/sponge_wet",
+    "top": "blocks/sponge_wet",
+    "side": "blocks/sponge_wet"
+  }
+}

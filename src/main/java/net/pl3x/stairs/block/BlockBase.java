@@ -206,9 +206,9 @@ public abstract class BlockBase extends Block {
 
     @Override
     @Nullable
-    public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end) {
+    public RayTraceResult collisionRayTrace(IBlockState blockState, World world, BlockPos pos, Vec3d start, Vec3d end) {
         List<RayTraceResult> list = Lists.newArrayList();
-        for (AxisAlignedBB aabb : getCollisionBoxList(getActualState(blockState, worldIn, pos))) {
+        for (AxisAlignedBB aabb : getCollisionBoxList(getActualState(blockState, world, pos))) {
             list.add(rayTrace(pos, start, end, aabb));
         }
         RayTraceResult result = null;
@@ -243,8 +243,8 @@ public abstract class BlockBase extends Block {
     }
 
     @Override
-    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-        return state.withProperty(SHAPE, getStairsShape(state, worldIn, pos));
+    public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos) {
+        return state.withProperty(SHAPE, getStairsShape(state, world, pos));
     }
 
     private static EnumShape getStairsShape(IBlockState state, IBlockAccess world, BlockPos pos) {
@@ -287,10 +287,10 @@ public abstract class BlockBase extends Block {
     }
 
     @Override
-    public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+    public IBlockState withMirror(IBlockState state, Mirror mirror) {
         EnumFacing enumfacing = state.getValue(FACING);
         EnumShape shape = state.getValue(SHAPE);
-        switch (mirrorIn) {
+        switch (mirror) {
             case LEFT_RIGHT:
                 if (enumfacing.getAxis() == EnumFacing.Axis.Z) {
                     switch (shape) {
@@ -323,7 +323,7 @@ public abstract class BlockBase extends Block {
                     }
                 }
         }
-        return super.withMirror(state, mirrorIn);
+        return super.withMirror(state, mirror);
     }
 
     @Override
@@ -332,7 +332,7 @@ public abstract class BlockBase extends Block {
     }
 
     @Override
-    public boolean canEntitySpawn(IBlockState state, Entity entityIn) {
+    public boolean canEntitySpawn(IBlockState state, Entity entity) {
         return false;
     }
 

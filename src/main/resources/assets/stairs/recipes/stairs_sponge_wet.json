@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
+  "key": {
+    "S": [
+      {
+        "item": "minecraft:sponge",
+        "data": 1
+      }
+    ]
+  },
+  "result": {
+    "item": "stairs:stairs_sponge_wet",
+    "count": 4
+  }
+}

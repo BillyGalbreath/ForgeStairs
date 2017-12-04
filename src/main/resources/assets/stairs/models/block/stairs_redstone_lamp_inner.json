@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "blocks/redstone_lamp_off",
+    "top": "blocks/redstone_lamp_off",
+    "side": "blocks/redstone_lamp_off"
+  }
+}

@@ -59,7 +59,7 @@ public class BlockStairsTerracotta extends BlockBase {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
         return color != null ? MAP_COLORS.get(color) : MapColor.ADOBE;
     }
 
@@ -71,7 +71,7 @@ public class BlockStairsTerracotta extends BlockBase {
         return Item.getItemFromBlock(getBlock(color));
     }
 
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
+    public ItemStack getItem(World world, BlockPos pos, IBlockState state) {
         return new ItemStack(getBlock(color));
     }
 

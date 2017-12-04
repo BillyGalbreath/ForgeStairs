@@ -27,7 +27,7 @@ public class BlockStairsWool extends BlockBase {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
         return MapColor.getBlockColor(color);
     }
 
@@ -39,7 +39,7 @@ public class BlockStairsWool extends BlockBase {
         return Item.getItemFromBlock(getBlock(color));
     }
 
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
+    public ItemStack getItem(World world, BlockPos pos, IBlockState state) {
         return new ItemStack(getBlock(color));
     }
 

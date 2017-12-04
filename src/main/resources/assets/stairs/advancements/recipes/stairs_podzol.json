@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "stairs:stairs_podzol"
+    ]
+  },
+  "criteria": {
+    "has_podzol": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:dirt",
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stairs:stairs_podzol"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_podzol",
+      "has_the_recipe"
+    ]
+  ]
+}

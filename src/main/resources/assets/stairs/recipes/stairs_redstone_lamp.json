@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R  ",
+    "RR ",
+    "RRR"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:redstone_lamp"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_redstone_lamp",
+    "count": 4
+  }
+}

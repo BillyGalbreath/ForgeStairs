@@ -24,7 +24,7 @@ public class BlockStairsGrass extends BlockBase {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
         return MapColor.GRASS;
     }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "M  ",
+    "MM ",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:mycelium"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_mycelium",
+    "count": 4
+  }
+}

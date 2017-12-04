@@ -1,0 +1,44 @@
+{
+  "textures": {
+    "0": "blocks/dirt",
+    "1": "blocks/mycelium_top",
+    "3": "blocks/mycelium_side",
+    "particle": "blocks/dirt"
+  },
+  "elements": [
+    {
+      "from": [8, 0, 0],
+      "to": [16, 8, 8],
+      "faces": {
+        "north": {"uv": [0, 0, 8, 8], "texture": "#3"},
+        "east": {"uv": [8, 0, 16, 8], "texture": "#3"},
+        "south": {"uv": [8, 0, 16, 8], "texture": "#0"},
+        "up": {"uv": [8, 0, 16, 8], "texture": "#1"},
+        "down": {"uv": [8, 8, 16, 16], "texture": "#0"}
+      }
+    },
+    {
+      "from": [8, 0, 8],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 8, 16], "texture": "#3"},
+        "east": {"uv": [0, 0, 8, 16], "texture": "#3"},
+        "south": {"uv": [8, 0, 16, 16], "texture": "#3"},
+        "west": {"uv": [8, 0, 16, 16], "texture": "#3"},
+        "up": {"uv": [8, 8, 16, 16], "texture": "#1"},
+        "down": {"uv": [8, 0, 16, 8], "texture": "#0"}
+      }
+    },
+    {
+      "from": [0, 0, 0],
+      "to": [8, 8, 16],
+      "faces": {
+        "north": {"uv": [8, 0, 16, 8], "texture": "#3"},
+        "south": {"uv": [0, 0, 8, 8], "texture": "#3"},
+        "west": {"uv": [0, 0, 16, 8], "texture": "#3"},
+        "up": {"uv": [0, 0, 8, 16], "texture": "#1"},
+        "down": {"uv": [0, 0, 8, 16], "texture": "#0"}
+      }
+    }
+  ]
+}

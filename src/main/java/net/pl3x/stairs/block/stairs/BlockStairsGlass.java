@@ -28,12 +28,11 @@ public class BlockStairsGlass extends BlockBase {
 
     @Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
-        Block block = world.getBlockState(pos.offset(face)).getBlock();
-        return block == this || block == Blocks.GLASS;
+        return false;
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
         return MapColor.AIR;
     }
 }

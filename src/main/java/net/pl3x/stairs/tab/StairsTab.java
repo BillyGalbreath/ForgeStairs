@@ -31,7 +31,18 @@ public class StairsTab extends CreativeTabs {
     static {
         LIST.add(ModBlocks.STAIRS_DIRT);
         LIST.add(ModBlocks.STAIRS_DIRT_COARSE);
+        LIST.add(ModBlocks.STAIRS_PODZOL);
+        LIST.add(ModBlocks.STAIRS_MYCELIUM);
         LIST.add(ModBlocks.STAIRS_GRASS);
+        LIST.add(ModBlocks.STAIRS_CLAY);
+        LIST.add(ModBlocks.STAIRS_SNOW);
+        LIST.add(ModBlocks.STAIRS_ICE);
+        LIST.add(ModBlocks.STAIRS_ICE_PACKED);
+        LIST.add(ModBlocks.STAIRS_BONE);
+        LIST.add(ModBlocks.STAIRS_SLIME);
+        LIST.add(ModBlocks.STAIRS_CRAFTING_TABLE);
+        LIST.add(ModBlocks.STAIRS_SPONGE);
+        LIST.add(ModBlocks.STAIRS_SPONGE_WET);
         LIST.add(Blocks.OAK_STAIRS);
         LIST.add(Blocks.BIRCH_STAIRS);
         LIST.add(Blocks.JUNGLE_STAIRS);
@@ -50,6 +61,7 @@ public class StairsTab extends CreativeTabs {
         LIST.add(ModBlocks.STAIRS_LEAVES_JUNGLE);
         LIST.add(ModBlocks.STAIRS_LEAVES_ACACIA);
         LIST.add(ModBlocks.STAIRS_LEAVES_DARK_OAK);
+        LIST.add(ModBlocks.STAIRS_BEDROCK);
         LIST.add(Blocks.STONE_STAIRS);
         LIST.add(ModBlocks.STAIRS_COBBLESTONE_MOSSY);
         LIST.add(ModBlocks.STAIRS_STONE);
@@ -80,6 +92,7 @@ public class StairsTab extends CreativeTabs {
         LIST.add(ModBlocks.STAIRS_GLOWSTONE);
         LIST.add(ModBlocks.STAIRS_MAGMA);
         LIST.add(ModBlocks.STAIRS_OBSIDIAN);
+        LIST.add(ModBlocks.STAIRS_REDSTONE_LAMP);
         LIST.add(ModBlocks.STAIRS_COAL);
         LIST.add(ModBlocks.STAIRS_IRON);
         LIST.add(ModBlocks.STAIRS_GOLD);
@@ -102,9 +115,6 @@ public class StairsTab extends CreativeTabs {
         LIST.add(ModBlocks.STAIRS_END_BRICKS);
         LIST.add(Blocks.PURPUR_STAIRS);
         LIST.add(ModBlocks.STAIRS_PURPUR_PILLAR);
-        LIST.add(ModBlocks.STAIRS_BONE);
-        LIST.add(ModBlocks.STAIRS_ICE_PACKED);
-        LIST.add(ModBlocks.STAIRS_SLIME);
         LIST.add(ModBlocks.STAIRS_CONCRETE_BLACK);
         LIST.add(ModBlocks.STAIRS_CONCRETE_BLUE);
         LIST.add(ModBlocks.STAIRS_CONCRETE_BROWN);

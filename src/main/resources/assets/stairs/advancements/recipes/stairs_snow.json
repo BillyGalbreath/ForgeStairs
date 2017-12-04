@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "stairs:stairs_snow"
+    ]
+  },
+  "criteria": {
+    "has_snow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:snow"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stairs:stairs_snow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_snow",
+      "has_the_recipe"
+    ]
+  ]
+}

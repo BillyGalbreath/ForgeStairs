@@ -25,7 +25,7 @@ public class BlockStairsLeaves extends BlockBase {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
         return MapColor.FOLIAGE;
     }
 
@@ -60,12 +60,12 @@ public class BlockStairsLeaves extends BlockBase {
     }
 
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-        if (worldIn.isRainingAt(pos.up()) && !worldIn.getBlockState(pos.down()).isTopSolid() && rand.nextInt(15) == 1) {
+    public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
+        if (world.isRainingAt(pos.up()) && !world.getBlockState(pos.down()).isTopSolid() && rand.nextInt(15) == 1) {
             double d0 = (double) ((float) pos.getX() + rand.nextFloat());
             double d1 = (double) pos.getY() - 0.05D;
             double d2 = (double) ((float) pos.getZ() + rand.nextFloat());
-            worldIn.spawnParticle(EnumParticleTypes.DRIP_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle(EnumParticleTypes.DRIP_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D);
         }
     }
 }

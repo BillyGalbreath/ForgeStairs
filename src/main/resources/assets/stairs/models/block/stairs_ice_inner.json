@@ -1,0 +1,9 @@
+{
+  "parent": "stairs:block/inner_stairs_clear",
+  "textures": {
+    "full": "blocks/ice",
+    "quarter": "blocks/ice",
+    "angle_left": "blocks/ice",
+    "angle_right": "blocks/ice"
+  }
+}

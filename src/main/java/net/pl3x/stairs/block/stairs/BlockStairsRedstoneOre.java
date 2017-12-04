@@ -37,7 +37,7 @@ public class BlockStairsRedstoneOre extends BlockStairsBasic {
     }
 
     @Override
-    public int tickRate(World worldIn) {
+    public int tickRate(World world) {
         return 30;
     }
 
@@ -81,9 +81,9 @@ public class BlockStairsRedstoneOre extends BlockStairsBasic {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+    public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
         if (isOn) {
-            spawnParticles(worldIn, pos);
+            spawnParticles(world, pos);
         }
     }
 
@@ -123,7 +123,12 @@ public class BlockStairsRedstoneOre extends BlockStairsBasic {
     }
 
     @Override
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
+    public ItemStack getItem(World world, BlockPos pos, IBlockState state) {
+        return new ItemStack(Item.getItemFromBlock(ModBlocks.STAIRS_REDSTONE_ORE), 1);
+    }
+
+    @Override
+    public ItemStack getSilkTouchDrop(IBlockState state) {
         return new ItemStack(Item.getItemFromBlock(ModBlocks.STAIRS_REDSTONE_ORE), 1);
     }
 }

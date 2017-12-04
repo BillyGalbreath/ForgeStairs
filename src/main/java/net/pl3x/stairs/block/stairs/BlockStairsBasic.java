@@ -17,7 +17,7 @@ public class BlockStairsBasic extends BlockBase {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
         return mapColor;
     }
 
@@ -53,6 +53,12 @@ public class BlockStairsBasic extends BlockBase {
 
     public BlockStairsBasic setSlipperiness(float slipperiness) {
         super.setDefaultSlipperiness(slipperiness);
+        return this;
+    }
+
+    @Override
+    public BlockStairsBasic disableStats() {
+        super.disableStats();
         return this;
     }
 }

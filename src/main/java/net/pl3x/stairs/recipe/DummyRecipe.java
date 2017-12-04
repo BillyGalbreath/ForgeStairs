@@ -8,7 +8,7 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 
 public class DummyRecipe extends IForgeRegistryEntry.Impl<IRecipe> implements IRecipe {
     @Override
-    public boolean matches(InventoryCrafting inv, World worldIn) {
+    public boolean matches(InventoryCrafting inv, World world) {
         return false;
     }
 
