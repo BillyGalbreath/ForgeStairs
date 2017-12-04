@@ -1,0 +1,9 @@
+{
+  "parent": "stairs:block/inner_stairs_clear",
+  "textures": {
+    "full": "blocks/glass",
+    "quarter": "stairs:blocks/glass_quarter",
+    "angle_left": "stairs:blocks/glass_angle_left",
+    "angle_right": "stairs:blocks/glass_angle_right"
+  }
+}

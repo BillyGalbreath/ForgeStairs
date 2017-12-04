@@ -1,0 +1,9 @@
+{
+  "parent": "stairs:block/inner_stairs_tinted",
+  "textures": {
+    "full": "blocks/leaves_acacia",
+    "quarter": "blocks/leaves_acacia",
+    "angle_left": "blocks/leaves_acacia",
+    "angle_right": "blocks/leaves_acacia"
+  }
+}

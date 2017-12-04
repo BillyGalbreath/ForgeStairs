@@ -1,0 +1,10 @@
+{
+  "parent": "stairs:block/outer_stairs_tinted",
+  "textures": {
+    "full": "blocks/leaves_spruce",
+    "slab": "blocks/leaves_spruce",
+    "quarter": "blocks/leaves_spruce",
+    "angle_left": "blocks/leaves_spruce",
+    "angle_right": "blocks/leaves_spruce"
+  }
+}

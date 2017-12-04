@@ -1,0 +1,62 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "stairs:stairs_terracotta",
+      "stairs:stairs_terracotta_black",
+      "stairs:stairs_terracotta_blue",
+      "stairs:stairs_terracotta_brown",
+      "stairs:stairs_terracotta_cyan",
+      "stairs:stairs_terracotta_gray",
+      "stairs:stairs_terracotta_green",
+      "stairs:stairs_terracotta_light_blue",
+      "stairs:stairs_terracotta_lime",
+      "stairs:stairs_terracotta_magenta",
+      "stairs:stairs_terracotta_orange",
+      "stairs:stairs_terracotta_pink",
+      "stairs:stairs_terracotta_purple",
+      "stairs:stairs_terracotta_red",
+      "stairs:stairs_terracotta_silver",
+      "stairs:stairs_terracotta_white",
+      "stairs:stairs_terracotta_yellow"
+    ]
+  },
+  "criteria": {
+    "has_hardened_clay": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:hardened_clay"
+          }
+        ]
+      }
+    },
+    "has_terracotta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stained_hardened_clay"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stairs:stairs_terracotta_black"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hardened_clay",
+      "has_the_recipe"
+    ],
+    [
+      "has_terracotta",
+      "has_the_recipe"
+    ]
+  ]
+}

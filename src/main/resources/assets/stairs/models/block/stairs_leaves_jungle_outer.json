@@ -1,0 +1,10 @@
+{
+  "parent": "stairs:block/outer_stairs_tinted",
+  "textures": {
+    "full": "blocks/leaves_jungle",
+    "slab": "blocks/leaves_jungle",
+    "quarter": "blocks/leaves_jungle",
+    "angle_left": "blocks/leaves_jungle",
+    "angle_right": "blocks/leaves_jungle"
+  }
+}

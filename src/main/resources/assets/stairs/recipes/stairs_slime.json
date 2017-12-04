@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:slime"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_slime",
+    "count": 4
+  }
+}

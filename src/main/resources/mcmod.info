@@ -1,0 +1,9 @@
+[{
+  "modid": "stairs",
+  "name": "Stairs",
+  "description": "Yo dawg, I heard you like stairs...",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "authorList": ["BillyGalbreath"],
+  "logoFile": "assets/logo.png"
+}]
