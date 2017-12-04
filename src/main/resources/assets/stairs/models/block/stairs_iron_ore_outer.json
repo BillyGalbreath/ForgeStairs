@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "blocks/iron_ore",
+    "top": "blocks/iron_ore",
+    "side": "blocks/iron_ore"
+  }
+}

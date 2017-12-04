@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G  ",
+    "GG ",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ore"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_gold_ore",
+    "count": 4
+  }
+}

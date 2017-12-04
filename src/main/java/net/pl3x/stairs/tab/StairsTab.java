@@ -87,6 +87,13 @@ public class StairsTab extends CreativeTabs {
         LIST.add(ModBlocks.STAIRS_REDSTONE);
         LIST.add(ModBlocks.STAIRS_DIAMOND);
         LIST.add(ModBlocks.STAIRS_EMERALD);
+        LIST.add(ModBlocks.STAIRS_COAL_ORE);
+        LIST.add(ModBlocks.STAIRS_IRON_ORE);
+        LIST.add(ModBlocks.STAIRS_GOLD_ORE);
+        LIST.add(ModBlocks.STAIRS_LAPIS_ORE);
+        LIST.add(ModBlocks.STAIRS_REDSTONE_ORE);
+        LIST.add(ModBlocks.STAIRS_DIAMOND_ORE);
+        LIST.add(ModBlocks.STAIRS_EMERALD_ORE);
         LIST.add(ModBlocks.STAIRS_PRISMARINE);
         LIST.add(ModBlocks.STAIRS_PRISMARINE_BRICK);
         LIST.add(ModBlocks.STAIRS_DARK_PRISMARINE);

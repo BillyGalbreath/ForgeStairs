@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "blocks/redstone_ore",
+    "top": "blocks/redstone_ore",
+    "side": "blocks/redstone_ore"
+  }
+}

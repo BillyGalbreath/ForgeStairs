@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "E  ",
+    "EE ",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:emerald_ore"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_emerald_ore",
+    "count": 4
+  }
+}
