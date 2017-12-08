@@ -226,20 +226,36 @@ public abstract class BlockBase extends Block {
         return result;
     }
 
+    /*
+    DEC BIN  FACING HALF
+    0   0000 south  bottom
+    1   0001 south  top
+    2   0010 west   bottom
+    3   0011 west   top
+    4   0100 north  bottom
+    5   0101 north  top
+    6   0110 east   bottom
+    7   0111 east   top
+        ││││
+        │││└─── half        (bottom[0], top[1])
+        │└└──── facing      (south[00], west[01], north[10], east[11])
+        └────── [not used]
+    */
+
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        IBlockState state = getDefaultState().withProperty(HALF, (meta & 4) > 0 ? EnumHalf.TOP : EnumHalf.BOTTOM);
-        state = state.withProperty(FACING, EnumFacing.getFront(5 - (meta & 3)));
-        return state;
+        return getDefaultState()
+                .withProperty(HALF, (meta & 1) > 0 ? EnumHalf.TOP : EnumHalf.BOTTOM)
+                .withProperty(FACING, EnumFacing.getHorizontal(meta >> 1));
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
         int i = 0;
         if (state.getValue(HALF) == EnumHalf.TOP) {
-            i |= 4;
+            i |= 1;
         }
-        i = i | 5 - state.getValue(FACING).getIndex();
+        i |= state.getValue(FACING).getHorizontalIndex() << 1;
         return i;
     }
 
@@ -248,7 +264,7 @@ public abstract class BlockBase extends Block {
         return state.withProperty(SHAPE, getStairsShape(state, world, pos));
     }
 
-    protected static EnumShape getStairsShape(IBlockState state, IBlockAccess world, BlockPos pos) {
+    public static EnumShape getStairsShape(IBlockState state, IBlockAccess world, BlockPos pos) {
         EnumFacing facing = state.getValue(FACING);
         IBlockState state1 = world.getBlockState(pos.offset(facing));
         if (isBlockStairs(state1) && state.getValue(HALF) == state1.getValue(HALF)) {
