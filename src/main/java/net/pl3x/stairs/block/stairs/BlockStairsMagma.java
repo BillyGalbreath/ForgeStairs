@@ -50,6 +50,7 @@ public class BlockStairsMagma extends BlockBase {
         return 15728880;
     }
 
+    @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
         BlockPos blockpos = pos.up();
         IBlockState iblockstate = world.getBlockState(blockpos);

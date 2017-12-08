@@ -18,6 +18,7 @@ public class BlockStairsGrass extends BlockBase {
         setHardness(0.6F);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT_MIPPED;

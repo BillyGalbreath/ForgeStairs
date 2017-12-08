@@ -31,19 +31,22 @@ public class BlockStairsWool extends BlockBase {
         return MapColor.getBlockColor(color);
     }
 
+    @Override
     public Item createItemBlock() {
         return new ItemBlock(getBlock(color)).setRegistryName(getRegistryName());
     }
 
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Item.getItemFromBlock(getBlock(color));
     }
 
+    @Override
     public ItemStack getItem(World world, BlockPos pos, IBlockState state) {
         return new ItemStack(getBlock(color));
     }
 
-    private static BlockStairsWool getBlock(EnumDyeColor color) {
+    public static BlockStairsWool getBlock(EnumDyeColor color) {
         switch (color) {
             case BLACK:
                 return ModBlocks.STAIRS_WOOL_BLACK;

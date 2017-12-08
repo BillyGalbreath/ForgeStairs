@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stairs_concrete_powder",
+  "pattern": [
+    "C  ",
+    "CC ",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:concrete_powder",
+      "data": 9
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_concrete_powder_cyan",
+    "count": 4
+  }
+}

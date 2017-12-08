@@ -21,6 +21,7 @@ public class BlockStairsGlass extends BlockBase {
         setHardness(0.3F);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT_MIPPED;

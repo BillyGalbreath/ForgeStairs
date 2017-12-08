@@ -27,6 +27,7 @@ public class BlockStairsSlime extends BlockBase {
         return MapColor.GRASS;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
         return true;

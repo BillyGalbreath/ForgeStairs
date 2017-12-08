@@ -34,16 +34,19 @@ public class BlockStairsLeaves extends BlockBase {
         return false;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public boolean isOpaqueCube(IBlockState state) {
         return !isFancy();
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer() {
         return isFancy() ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess world, BlockPos pos, EnumFacing side) {
         return false;
@@ -59,6 +62,7 @@ public class BlockStairsLeaves extends BlockBase {
         return net.minecraft.client.Minecraft.getMinecraft().gameSettings.fancyGraphics;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
         if (world.isRainingAt(pos.up()) && !world.getBlockState(pos.down()).isTopSolid() && rand.nextInt(15) == 1) {

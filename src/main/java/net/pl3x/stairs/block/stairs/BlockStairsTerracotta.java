@@ -63,19 +63,22 @@ public class BlockStairsTerracotta extends BlockBase {
         return color != null ? MAP_COLORS.get(color) : MapColor.ADOBE;
     }
 
+    @Override
     public Item createItemBlock() {
         return new ItemBlock(getBlock(color)).setRegistryName(getRegistryName());
     }
 
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Item.getItemFromBlock(getBlock(color));
     }
 
+    @Override
     public ItemStack getItem(World world, BlockPos pos, IBlockState state) {
         return new ItemStack(getBlock(color));
     }
 
-    private static BlockStairsTerracotta getBlock(EnumDyeColor color) {
+    public static BlockStairsTerracotta getBlock(EnumDyeColor color) {
         if (color == null) {
             return ModBlocks.STAIRS_TERRACOTTA;
         }

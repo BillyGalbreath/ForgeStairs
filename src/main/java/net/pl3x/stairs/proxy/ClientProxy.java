@@ -11,12 +11,14 @@ import net.pl3x.stairs.color.ModColorManager;
 
 @SideOnly(Side.CLIENT)
 public class ClientProxy extends ServerProxy {
+    @Override
     public void init(FMLInitializationEvent event) {
         super.init(event);
 
         ModColorManager.registerColorHandlers();
     }
 
+    @Override
     public void registerItemRenderer(Item item, int meta, String id) {
         super.registerItemRenderer(item, meta, id);
 

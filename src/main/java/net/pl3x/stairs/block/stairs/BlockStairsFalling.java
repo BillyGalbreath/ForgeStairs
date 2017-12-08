@@ -1,14 +1,23 @@
 package net.pl3x.stairs.block.stairs;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityFallingBlock;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -44,9 +53,9 @@ public class BlockStairsFalling extends BlockStairsBasic {
         if ((world.isAirBlock(pos.down()) || canFallThrough(world.getBlockState(pos.down()))) && pos.getY() >= 0) {
             if (!fallInstantly && world.isAreaLoaded(pos.add(-32, -32, -32), pos.add(32, 32, 32))) {
                 if (!world.isRemote) {
-                    EntityFallingBlock entityfallingblock = new EntityFallingBlock(world, (double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, world.getBlockState(pos));
-                    onStartFalling(entityfallingblock);
-                    world.spawnEntity(entityfallingblock);
+                    EntityFallingStairs entity = new EntityFallingStairs(world, (double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, world.getBlockState(pos));
+                    onStartFalling(entity);
+                    world.spawnEntity(entity);
                 }
             } else {
                 IBlockState state = world.getBlockState(pos);
@@ -62,7 +71,7 @@ public class BlockStairsFalling extends BlockStairsBasic {
         }
     }
 
-    public void onStartFalling(EntityFallingBlock fallingEntity) {
+    public void onStartFalling(EntityFallingStairs fallingEntity) {
     }
 
     @Override
@@ -121,5 +130,116 @@ public class BlockStairsFalling extends BlockStairsBasic {
     public BlockStairsFalling setDustColor(int dustColor) {
         this.dustColor = dustColor;
         return this;
+    }
+
+    public static class EntityFallingStairs extends EntityFallingBlock {
+        private IBlockState fallTile;
+
+        public EntityFallingStairs(World world) {
+            super(world);
+        }
+
+        public EntityFallingStairs(World world, double x, double y, double z, IBlockState state) {
+            super(world, x, y, z, state);
+            this.fallTile = state;
+        }
+
+        public void onUpdate() {
+            Block block = fallTile.getBlock();
+
+            if (fallTile.getMaterial() == Material.AIR) {
+                setDead();
+                return;
+            }
+
+            prevPosX = this.posX;
+            prevPosY = this.posY;
+            prevPosZ = this.posZ;
+
+            if (fallTime++ == 0) {
+                BlockPos pos = new BlockPos(this);
+                if (world.getBlockState(pos).getBlock() == block) {
+                    world.setBlockToAir(pos);
+                } else if (!world.isRemote) {
+                    setDead();
+                    return;
+                }
+            }
+
+            if (!hasNoGravity()) {
+                motionY -= 0.03999999910593033D;
+            }
+
+            move(MoverType.SELF, motionX, motionY, motionZ);
+
+            if (!world.isRemote) {
+                BlockPos pos1 = new BlockPos(this);
+                boolean isPowderStairs = fallTile.getBlock() instanceof BlockStairsConcretePowder;
+                boolean powderTouchingWater = isPowderStairs && world.getBlockState(pos1).getMaterial() == Material.WATER;
+                double d0 = motionX * motionX + motionY * motionY + motionZ * motionZ;
+
+                if (isPowderStairs && d0 > 1.0D) {
+                    RayTraceResult result = world.rayTraceBlocks(new Vec3d(prevPosX, prevPosY, prevPosZ), new Vec3d(posX, posY, posZ), true);
+                    if (result != null && world.getBlockState(result.getBlockPos()).getMaterial() == Material.WATER) {
+                        pos1 = result.getBlockPos();
+                        powderTouchingWater = true;
+                    }
+                }
+
+                if (!onGround && !powderTouchingWater) {
+                    if (fallTime > 100 && !world.isRemote && (pos1.getY() < 1 || pos1.getY() > 256) || fallTime > 600) {
+                        if (shouldDropItem && world.getGameRules().getBoolean("doEntityDrops")) {
+                            entityDropItem(new ItemStack(block, 1, block.damageDropped(fallTile)), 0.0F);
+                        }
+                        setDead();
+                    }
+                } else {
+                    IBlockState state1 = world.getBlockState(pos1);
+                    if (world.isAirBlock(new BlockPos(posX, posY - 0.009999999776482582D, posZ))) {
+                        if (!powderTouchingWater && BlockFalling.canFallThrough(world.getBlockState(new BlockPos(posX, posY - 0.009999999776482582D, posZ)))) {
+                            onGround = false;
+                            return;
+                        }
+                    }
+
+                    motionX *= 0.699999988079071D;
+                    motionZ *= 0.699999988079071D;
+                    motionY *= -0.5D;
+
+                    if (state1.getBlock() != Blocks.PISTON_EXTENSION) {
+                        setDead();
+
+                        if (world.mayPlace(block, pos1, true, EnumFacing.UP, null) &&
+                                (powderTouchingWater || !BlockFalling.canFallThrough(world.getBlockState(pos1.down()))) &&
+                                world.setBlockState(pos1, fallTile, 3)) {
+                            if (block instanceof BlockFalling) {
+                                ((BlockFalling) block).onEndFalling(world, pos1, fallTile, state1);
+                            }
+
+                            if (tileEntityData != null && block.hasTileEntity(fallTile)) {
+                                TileEntity tileentity = world.getTileEntity(pos1);
+                                if (tileentity != null) {
+                                    NBTTagCompound nbttagcompound = tileentity.writeToNBT(new NBTTagCompound());
+                                    for (String s : tileEntityData.getKeySet()) {
+                                        NBTBase nbtbase = tileEntityData.getTag(s);
+                                        if (!"x".equals(s) && !"y".equals(s) && !"z".equals(s)) {
+                                            nbttagcompound.setTag(s, nbtbase.copy());
+                                        }
+                                    }
+                                    tileentity.readFromNBT(nbttagcompound);
+                                    tileentity.markDirty();
+                                }
+                            }
+                        } else if (shouldDropItem && world.getGameRules().getBoolean("doEntityDrops")) {
+                            entityDropItem(new ItemStack(block, 1, block.damageDropped(fallTile)), 0.0F);
+                        }
+                    }
+                }
+            }
+
+            motionX *= 0.9800000190734863D;
+            motionY *= 0.9800000190734863D;
+            motionZ *= 0.9800000190734863D;
+        }
     }
 }
