@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "M  ",
+    "MM ",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:melon_block"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_melon",
+    "count": 4
+  }
+}

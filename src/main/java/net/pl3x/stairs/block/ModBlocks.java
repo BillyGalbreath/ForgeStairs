@@ -7,21 +7,27 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.pl3x.stairs.block.stairs.BlockStairsBasic;
 import net.pl3x.stairs.block.stairs.BlockStairsConcrete;
 import net.pl3x.stairs.block.stairs.BlockStairsCraftingTable;
+import net.pl3x.stairs.block.stairs.BlockStairsFalling;
 import net.pl3x.stairs.block.stairs.BlockStairsGlass;
 import net.pl3x.stairs.block.stairs.BlockStairsGlassStained;
 import net.pl3x.stairs.block.stairs.BlockStairsGrass;
+import net.pl3x.stairs.block.stairs.BlockStairsHay;
 import net.pl3x.stairs.block.stairs.BlockStairsIce;
+import net.pl3x.stairs.block.stairs.BlockStairsJukebox;
 import net.pl3x.stairs.block.stairs.BlockStairsLeaves;
 import net.pl3x.stairs.block.stairs.BlockStairsMagma;
 import net.pl3x.stairs.block.stairs.BlockStairsMycelium;
+import net.pl3x.stairs.block.stairs.BlockStairsNoteblock;
 import net.pl3x.stairs.block.stairs.BlockStairsRedstone;
 import net.pl3x.stairs.block.stairs.BlockStairsRedstoneLamp;
 import net.pl3x.stairs.block.stairs.BlockStairsRedstoneOre;
 import net.pl3x.stairs.block.stairs.BlockStairsSlime;
+import net.pl3x.stairs.block.stairs.BlockStairsSoulSand;
 import net.pl3x.stairs.block.stairs.BlockStairsSponge;
 import net.pl3x.stairs.block.stairs.BlockStairsTerracotta;
 import net.pl3x.stairs.block.stairs.BlockStairsWool;
@@ -37,6 +43,7 @@ public class ModBlocks {
     public static final BlockStairsBasic STAIRS_ANDESITE_SMOOTH = new BlockStairsBasic(Material.ROCK, "stairs_andesite_smooth", MapColor.STONE).setHardness(1.5F).setResistance(10F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_BEDROCK = new BlockStairsBasic(Material.ROCK, "stairs_bedrock", MapColor.STONE).setHardness(-1F).setResistance(6000000F).setSoundType(SoundType.STONE).disableStats();
     public static final BlockStairsBasic STAIRS_BONE = new BlockStairsBasic(Material.ROCK, "stairs_bone", MapColor.SAND).setHardness(2F).setSoundType(SoundType.STONE);
+    public static final BlockStairsBasic STAIRS_BOOKSHELF = new BlockStairsBasic(Material.WOOD, "stairs_bookshelf", MapColor.WOOD).setHardness(1.5F).setSoundType(SoundType.WOOD);
     public static final BlockStairsBasic STAIRS_CLAY = new BlockStairsBasic(Material.CLAY, "stairs_clay", MapColor.CLAY).setHardness(0.6F).setSoundType(SoundType.GROUND);
     public static final BlockStairsBasic STAIRS_COAL = new BlockStairsBasic(Material.ROCK, "stairs_coal", MapColor.BLACK).setHardness(5F).setResistance(10F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_COAL_ORE = new BlockStairsBasic(Material.ROCK, "stairs_coal_ore", MapColor.STONE).setHardness(3F).setResistance(5F).setSoundType(SoundType.STONE);
@@ -92,10 +99,13 @@ public class ModBlocks {
     public static final BlockStairsBasic STAIRS_GRANITE = new BlockStairsBasic(Material.ROCK, "stairs_granite", MapColor.DIRT).setHardness(1.5F).setResistance(10F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_GRANITE_SMOOTH = new BlockStairsBasic(Material.ROCK, "stairs_granite_smooth", MapColor.DIRT).setHardness(1.5F).setResistance(10F).setSoundType(SoundType.STONE);
     public static final BlockStairsGrass STAIRS_GRASS = new BlockStairsGrass();
+    public static final BlockStairsFalling STAIRS_GRAVEL = new BlockStairsFalling(Material.SAND, "stairs_gravel", MapColor.STONE).setHardness(0.6F).setSoundType(SoundType.GROUND).setDustColor(-8356741);
+    public static final BlockStairsHay STAIRS_HAY = new BlockStairsHay();
     public static final BlockStairsIce STAIRS_ICE = new BlockStairsIce();
     public static final BlockStairsBasic STAIRS_ICE_PACKED = new BlockStairsBasic(Material.PACKED_ICE, "stairs_ice_packed", MapColor.ICE).setHardness(0.5F).setSoundType(SoundType.GLASS).setSlipperiness(0.98F);
     public static final BlockStairsBasic STAIRS_IRON = new BlockStairsBasic(Material.IRON, "stairs_iron", MapColor.IRON).setHardness(5F).setResistance(10F).setSoundType(SoundType.METAL);
     public static final BlockStairsBasic STAIRS_IRON_ORE = new BlockStairsBasic(Material.ROCK, "stairs_iron_ore", MapColor.STONE).setHardness(3F).setResistance(5F).setSoundType(SoundType.STONE);
+    public static final BlockStairsJukebox STAIRS_JUKEBOX = new BlockStairsJukebox();
     public static final BlockStairsBasic STAIRS_LAPIS = new BlockStairsBasic(Material.IRON, "stairs_lapis", MapColor.LAPIS).setHardness(3F).setResistance(5F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_LAPIS_ORE = new BlockStairsBasic(Material.ROCK, "stairs_lapis_ore", MapColor.STONE).setHardness(3F).setResistance(5F).setSoundType(SoundType.STONE);
     public static final BlockStairsLeaves STAIRS_LEAVES_ACACIA = new BlockStairsLeaves("stairs_leaves_acacia");
@@ -111,17 +121,22 @@ public class ModBlocks {
     public static final BlockStairsBasic STAIRS_LOG_OAK = new BlockStairsBasic(Material.WOOD, "stairs_log_oak", MapColor.WOOD).setHardness(2F).setSoundType(SoundType.WOOD);
     public static final BlockStairsBasic STAIRS_LOG_SPRUCE = new BlockStairsBasic(Material.WOOD, "stairs_log_spruce", MapColor.OBSIDIAN).setHardness(2F).setSoundType(SoundType.WOOD);
     public static final BlockStairsMagma STAIRS_MAGMA = new BlockStairsMagma();
+    public static final BlockStairsBasic STAIRS_MELON = new BlockStairsBasic(Material.GOURD, "stairs_melon", MapColor.LIME).setHardness(1.0F).setSoundType(SoundType.WOOD);
     public static final BlockStairsMycelium STAIRS_MYCELIUM = new BlockStairsMycelium();
     public static final BlockStairsBasic STAIRS_NETHERRACK = new BlockStairsBasic(Material.ROCK, "stairs_netherrack", MapColor.NETHERRACK).setHardness(0.4F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_NETHER_WART = new BlockStairsBasic(Material.GRASS, "stairs_nether_wart", MapColor.RED).setHardness(1F).setSoundType(SoundType.WOOD);
+    public static final BlockStairsNoteblock STAIRS_NOTEBLOCK = new BlockStairsNoteblock();
     public static final BlockStairsBasic STAIRS_OBSIDIAN = new BlockStairsBasic(Material.ROCK, "stairs_obsidian", MapColor.BLACK).setHardness(50F).setResistance(2000F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_PODZOL = new BlockStairsBasic(Material.GROUND, "stairs_podzol", MapColor.OBSIDIAN).setHardness(0.5F).setResistance(0.5F).setSoundType(SoundType.GROUND);
     public static final BlockStairsBasic STAIRS_PRISMARINE = new BlockStairsBasic(Material.ROCK, "stairs_prismarine", MapColor.CYAN).setHardness(1.5F).setResistance(10F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_PRISMARINE_BRICK = new BlockStairsBasic(Material.ROCK, "stairs_prismarine_brick", MapColor.DIAMOND).setHardness(1.5F).setResistance(10F).setSoundType(SoundType.STONE);
+    public static final BlockStairsBasic STAIRS_PUMPKIN = new BlockStairsBasic(Material.GOURD, "stairs_pumpkin", MapColor.ADOBE).setHardness(1.0F).setSoundType(SoundType.WOOD);
     public static final BlockStairsBasic STAIRS_PURPUR_PILLAR = new BlockStairsBasic(Material.ROCK, "stairs_purpur_pillar", MapColor.MAGENTA).setHardness(1.5F).setResistance(10F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_QUARTZ_CHISELED = new BlockStairsBasic(Material.ROCK, "stairs_quartz_chiseled", MapColor.QUARTZ).setHardness(0.8F).setSoundType(SoundType.STONE);
+    public static final BlockStairsBasic STAIRS_QUARTZ_ORE = new BlockStairsBasic(Material.ROCK, "stairs_quartz_ore", MapColor.NETHERRACK).setHardness(3.0F).setResistance(5.0F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_QUARTZ_PILLAR = new BlockStairsBasic(Material.ROCK, "stairs_quartz_pillar", MapColor.QUARTZ).setHardness(0.8F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_RED_NETHER_BRICK = new BlockStairsBasic(Material.ROCK, "stairs_red_nether_brick", MapColor.NETHERRACK).setHardness(2F).setResistance(10F).setSoundType(SoundType.STONE);
+    public static final BlockStairsFalling STAIRS_RED_SAND = new BlockStairsFalling(Material.SAND, "stairs_red_sand", MapColor.ADOBE).setHardness(0.5F).setSoundType(SoundType.SAND).setDustColor(-5679071);
     public static final BlockStairsBasic STAIRS_RED_SANDSTONE_CHISELED = new BlockStairsBasic(Material.ROCK, "stairs_red_sandstone_chiseled", MapColor.ADOBE).setHardness(0.8F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_RED_SANDSTONE_SMOOTH = new BlockStairsBasic(Material.ROCK, "stairs_red_sandstone_smooth", MapColor.ADOBE).setHardness(0.8F).setSoundType(SoundType.STONE);
     public static final BlockStairsRedstone STAIRS_REDSTONE = new BlockStairsRedstone();
@@ -129,11 +144,13 @@ public class ModBlocks {
     public static final BlockStairsRedstoneLamp STAIRS_REDSTONE_LAMP_LIT = new BlockStairsRedstoneLamp("stairs_redstone_lamp_lit", true);
     public static final BlockStairsRedstoneOre STAIRS_REDSTONE_ORE = new BlockStairsRedstoneOre("stairs_redstone_ore", false);
     public static final BlockStairsRedstoneOre STAIRS_REDSTONE_ORE_LIT = new BlockStairsRedstoneOre("stairs_redstone_ore_lit", true);
+    public static final BlockStairsFalling STAIRS_SAND = new BlockStairsFalling(Material.SAND, "stairs_sand", MapColor.SAND).setHardness(0.5F).setSoundType(SoundType.SAND).setDustColor(-2370656);
     public static final BlockStairsBasic STAIRS_SANDSTONE_CHISELED = new BlockStairsBasic(Material.ROCK, "stairs_sandstone_chiseled", MapColor.SAND).setHardness(0.8F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_SANDSTONE_SMOOTH = new BlockStairsBasic(Material.ROCK, "stairs_sandstone_smooth", MapColor.SAND).setHardness(0.8F).setSoundType(SoundType.STONE);
     public static final BlockStairsBasic STAIRS_SEA_LANTERN = new BlockStairsBasic(Material.GLASS, "stairs_sea_lantern", MapColor.QUARTZ).setHardness(0.3F).setSoundType(SoundType.GLASS).setLightLevel(1F);
     public static final BlockStairsSlime STAIRS_SLIME = new BlockStairsSlime();
     public static final BlockStairsBasic STAIRS_SNOW = new BlockStairsBasic(Material.CRAFTED_SNOW, "stairs_snow", MapColor.SNOW).setHardness(0.2F).setSoundType(SoundType.SNOW);
+    public static final BlockStairsSoulSand STAIRS_SOUL_SAND = new BlockStairsSoulSand();
     public static final BlockStairsSponge STAIRS_SPONGE = new BlockStairsSponge("stairs_sponge", false);
     public static final BlockStairsSponge STAIRS_SPONGE_WET = new BlockStairsSponge("stairs_sponge_wet", true);
     public static final BlockStairsBasic STAIRS_STONE = new BlockStairsBasic(Material.ROCK, "stairs_stone", MapColor.STONE).setHardness(1.5F).setResistance(10F).setSoundType(SoundType.STONE);
@@ -157,6 +174,7 @@ public class ModBlocks {
     public static final BlockStairsTerracotta STAIRS_TERRACOTTA_SILVER = new BlockStairsTerracotta(EnumDyeColor.SILVER);
     public static final BlockStairsTerracotta STAIRS_TERRACOTTA_WHITE = new BlockStairsTerracotta(EnumDyeColor.WHITE);
     public static final BlockStairsTerracotta STAIRS_TERRACOTTA_YELLOW = new BlockStairsTerracotta(EnumDyeColor.YELLOW);
+    public static final BlockStairsBasic STAIRS_TNT = new BlockStairsBasic(Material.TNT, "stairs_tnt", MapColor.TNT).setHardness(0.0F).setSoundType(SoundType.PLANT);
     public static final BlockStairsWool STAIRS_WOOL_BLACK = new BlockStairsWool(EnumDyeColor.BLACK);
     public static final BlockStairsWool STAIRS_WOOL_BLUE = new BlockStairsWool(EnumDyeColor.BLUE);
     public static final BlockStairsWool STAIRS_WOOL_BROWN = new BlockStairsWool(EnumDyeColor.BROWN);
@@ -176,6 +194,9 @@ public class ModBlocks {
 
     public static void register(IForgeRegistry<Block> registry) {
         __BLOCKS__.forEach(registry::register);
+
+        GameRegistry.registerTileEntity(BlockStairsJukebox.TileEntityJukebox.class, STAIRS_JUKEBOX.getRegistryName().toString());
+        GameRegistry.registerTileEntity(BlockStairsNoteblock.TileEntityNote.class, STAIRS_NOTEBLOCK.getRegistryName().toString());
     }
 
     public static void registerItemBlocks(IForgeRegistry<Item> registry) {

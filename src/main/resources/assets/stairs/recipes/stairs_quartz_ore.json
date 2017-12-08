@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Q  ",
+    "QQ ",
+    "QQQ"
+  ],
+  "key": {
+    "Q": {
+      "item": "minecraft:quartz_ore"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_quartz_ore",
+    "count": 4
+  }
+}

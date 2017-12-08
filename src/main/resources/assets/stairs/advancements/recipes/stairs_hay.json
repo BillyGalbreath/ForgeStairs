@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "stairs:stairs_hay"
+    ]
+  },
+  "criteria": {
+    "has_hay": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:hay_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stairs:stairs_hay"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hay",
+      "has_the_recipe"
+    ]
+  ]
+}

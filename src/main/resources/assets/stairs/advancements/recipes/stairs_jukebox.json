@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "stairs:stairs_jukebox"
+    ]
+  },
+  "criteria": {
+    "has_jukebox": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:jukebox"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stairs:stairs_jukebox"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jukebox",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "stairs:stairs_noteblock"
+    ]
+  },
+  "criteria": {
+    "has_noteblock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:noteblock"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stairs:stairs_noteblock"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_noteblock",
+      "has_the_recipe"
+    ]
+  ]
+}

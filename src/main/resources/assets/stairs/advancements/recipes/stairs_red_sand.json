@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "stairs:stairs_red_sand"
+    ]
+  },
+  "criteria": {
+    "has_red_sand": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:sand",
+            "data": 0
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stairs:stairs_red_sand"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_red_sand",
+      "has_the_recipe"
+    ]
+  ]
+}
