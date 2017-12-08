@@ -100,6 +100,31 @@ public class BlockStairsJukebox extends BlockBase implements ITileEntityProvider
         return 0;
     }
 
+    /*
+    DEC    BIN    FACING   HALF     HAS_RECORD
+    0      0000   south    bottom   no
+    1      0001   south    bottom   yes
+    2      0010   south    top      no
+    3      0011   south    top      yes
+    4      0100   west     bottom   no
+    5      0101   west     bottom   yes
+    6      0110   west     top      no
+    7      0111   west     top      yes
+    8      1000   north    bottom   no
+    9      1001   north    bottom   yes
+    10     1010   north    top      no
+    11     1011   north    top      yes
+    12     1100   east     bottom   no
+    13     1101   east     bottom   yes
+    14     1110   east     top      no
+    15     1111   east     top      yes
+           ││││
+           │││└── has_record  (true, false)
+           ││└─── half        (bottom[false], top[true])
+           ││
+           └└──── facing      (south[0], west[1], north[2], east[3])
+    */
+
     @Override
     public IBlockState getStateFromMeta(int meta) {
         return getDefaultState()
