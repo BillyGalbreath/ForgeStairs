@@ -28,7 +28,7 @@ minecraft {
     runDir = "run"
 
     replace "@DEV_BUILD@", project.version
-    replaceIn "Pl3x.java"
+    replaceIn "Stairs.java"
 
     mappings = "snapshot_" + mappingsVersion
     makeObfSourceJar = false
