@@ -1,8 +1,8 @@
 {
-  "parent": "minecraft:block/outer_stairs",
+  "parent": "stairs:block/base/stairs_log_outer",
   "textures": {
-    "bottom": "blocks/log_acacia_top",
     "top": "blocks/log_acacia_top",
-    "side": "blocks/log_acacia"
+    "side": "blocks/log_acacia",
+    "split": "stairs:blocks/log_acacia_split"
   }
 }

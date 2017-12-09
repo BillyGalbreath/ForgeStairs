@@ -1,5 +1,5 @@
 {
-  "parent": "stairs:block/outer_stairs_clear",
+  "parent": "stairs:block/base/stairs_clear_outer",
   "textures": {
     "full": "blocks/glass_lime",
     "slab": "stairs:blocks/glass_lime_slab",

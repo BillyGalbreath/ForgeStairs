@@ -1,5 +1,5 @@
 {
-  "parent": "stairs:block/stairs_tinted",
+  "parent": "stairs:block/base/stairs_leaves",
   "textures": {
     "full": "blocks/leaves_acacia",
     "slab": "blocks/leaves_acacia",

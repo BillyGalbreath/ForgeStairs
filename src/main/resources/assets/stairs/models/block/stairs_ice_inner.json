@@ -1,5 +1,5 @@
 {
-  "parent": "stairs:block/inner_stairs_clear",
+  "parent": "stairs:block/base/stairs_clear_inner",
   "textures": {
     "full": "blocks/ice",
     "quarter": "blocks/ice",
