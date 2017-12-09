@@ -14,8 +14,8 @@ import net.pl3x.stairs.block.BlockBase;
 
 import java.util.Random;
 
-public class BlockStairsMycelium extends BlockBase {
-    public BlockStairsMycelium() {
+public class StairsMycelium extends BlockBase {
+    public StairsMycelium() {
         super(Material.GRASS, "stairs_mycelium");
         setSoundType(SoundType.PLANT);
         setHardness(0.6F);

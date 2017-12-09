@@ -17,10 +17,10 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.pl3x.stairs.block.BlockBase;
 
-public class BlockStairsJukebox extends BlockBase implements ITileEntityProvider {
+public class StairsJukebox extends BlockBase implements ITileEntityProvider {
     public static final PropertyBool HAS_RECORD = PropertyBool.create("has_record");
 
-    public BlockStairsJukebox() {
+    public StairsJukebox() {
         super(Material.WOOD, "stairs_jukebox");
         setSoundType(SoundType.STONE);
         setHardness(2F);

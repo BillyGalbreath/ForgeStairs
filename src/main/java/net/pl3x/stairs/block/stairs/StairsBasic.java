@@ -8,10 +8,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.pl3x.stairs.block.BlockBase;
 
-public class BlockStairsBasic extends BlockBase {
+public class StairsBasic extends BlockBase {
     private final MapColor mapColor;
 
-    public BlockStairsBasic(Material material, String name, MapColor mapColor) {
+    public StairsBasic(Material material, String name, MapColor mapColor) {
         super(material, name);
         this.mapColor = mapColor;
     }
@@ -22,42 +22,42 @@ public class BlockStairsBasic extends BlockBase {
     }
 
     @Override
-    public BlockStairsBasic setSoundType(SoundType sound) {
+    public StairsBasic setSoundType(SoundType sound) {
         super.setSoundType(sound);
         return this;
     }
 
     @Override
-    public BlockStairsBasic setLightOpacity(int opacity) {
+    public StairsBasic setLightOpacity(int opacity) {
         super.setLightOpacity(opacity);
         return this;
     }
 
     @Override
-    public BlockStairsBasic setLightLevel(float value) {
+    public StairsBasic setLightLevel(float value) {
         super.setLightLevel(value);
         return this;
     }
 
     @Override
-    public BlockStairsBasic setResistance(float resistance) {
+    public StairsBasic setResistance(float resistance) {
         super.setResistance(resistance);
         return this;
     }
 
     @Override
-    public BlockStairsBasic setHardness(float hardness) {
+    public StairsBasic setHardness(float hardness) {
         super.setHardness(hardness);
         return this;
     }
 
-    public BlockStairsBasic setSlipperiness(float slipperiness) {
+    public StairsBasic setSlipperiness(float slipperiness) {
         super.setDefaultSlipperiness(slipperiness);
         return this;
     }
 
     @Override
-    public BlockStairsBasic disableStats() {
+    public StairsBasic disableStats() {
         super.disableStats();
         return this;
     }

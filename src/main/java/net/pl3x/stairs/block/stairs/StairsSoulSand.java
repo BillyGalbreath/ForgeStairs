@@ -16,7 +16,7 @@ import net.pl3x.stairs.block.BlockBase;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlockStairsSoulSand extends BlockBase {
+public class StairsSoulSand extends BlockBase {
     public static final AxisAlignedBB AABB_SLAB_TOP = new AxisAlignedBB(0.0D, 0.5D, 0.0D, 1.0D, 0.875D, 1.0D);
     public static final AxisAlignedBB AABB_QTR_TOP_WEST = new AxisAlignedBB(0.0D, 0.5D, 0.0D, 0.5D, 0.875D, 1.0D);
     public static final AxisAlignedBB AABB_QTR_TOP_EAST = new AxisAlignedBB(0.5D, 0.5D, 0.0D, 1.0D, 0.875D, 1.0D);
@@ -36,7 +36,7 @@ public class BlockStairsSoulSand extends BlockBase {
     public static final AxisAlignedBB AABB_OCT_BOT_SW = new AxisAlignedBB(0.0D, 0.0D, 0.5D, 0.5D, 0.375D, 1.0D);
     public static final AxisAlignedBB AABB_OCT_BOT_SE = new AxisAlignedBB(0.5D, 0.0D, 0.5D, 1.0D, 0.375D, 1.0D);
 
-    public BlockStairsSoulSand() {
+    public StairsSoulSand() {
         super(Material.SAND, "stairs_soul_sand");
         setSoundType(SoundType.SAND);
         setHardness(0.5F);

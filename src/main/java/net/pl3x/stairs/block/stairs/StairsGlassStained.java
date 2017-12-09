@@ -23,10 +23,10 @@ import net.pl3x.stairs.block.ModBlocks;
 
 import java.util.Random;
 
-public class BlockStairsGlassStained extends BlockBase {
+public class StairsGlassStained extends BlockBase {
     private final EnumDyeColor color;
 
-    public BlockStairsGlassStained(EnumDyeColor color) {
+    public StairsGlassStained(EnumDyeColor color) {
         super(Material.GLASS, "stairs_glass_" + color.getName());
         setSoundType(SoundType.GLASS);
         setHardness(0.3F);
@@ -43,7 +43,7 @@ public class BlockStairsGlassStained extends BlockBase {
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
         IBlockState state1 = world.getBlockState(pos.offset(face));
         Block block = state1.getBlock();
-        return (block == this && ((BlockStairsGlassStained) block).color == color) ||
+        return (block == this && ((StairsGlassStained) block).color == color) ||
                 (block == Blocks.STAINED_GLASS && state1.getValue(BlockStainedGlass.COLOR) == color);
     }
 
@@ -67,7 +67,7 @@ public class BlockStairsGlassStained extends BlockBase {
         return new ItemStack(getBlock(color));
     }
 
-    public static BlockStairsGlassStained getBlock(EnumDyeColor color) {
+    public static StairsGlassStained getBlock(EnumDyeColor color) {
         switch (color) {
             case BLACK:
                 return ModBlocks.STAIRS_GLASS_BLACK;

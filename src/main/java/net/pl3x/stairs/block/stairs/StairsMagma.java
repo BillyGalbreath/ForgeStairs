@@ -22,8 +22,8 @@ import net.pl3x.stairs.block.BlockBase;
 
 import java.util.Random;
 
-public class BlockStairsMagma extends BlockBase {
-    public BlockStairsMagma() {
+public class StairsMagma extends BlockBase {
+    public StairsMagma() {
         super(Material.ROCK, "stairs_magma");
         setSoundType(SoundType.STONE);
         setHardness(0.5F);

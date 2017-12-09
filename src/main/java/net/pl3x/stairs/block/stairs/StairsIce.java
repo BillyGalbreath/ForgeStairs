@@ -18,8 +18,8 @@ import net.pl3x.stairs.block.BlockBase;
 
 import java.util.Random;
 
-public class BlockStairsIce extends BlockBase {
-    public BlockStairsIce() {
+public class StairsIce extends BlockBase {
+    public StairsIce() {
         super(Material.ICE, "stairs_ice");
         setSoundType(SoundType.GLASS);
         setHardness(0.5F);

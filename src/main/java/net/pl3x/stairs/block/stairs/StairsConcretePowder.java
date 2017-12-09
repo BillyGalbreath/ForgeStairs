@@ -16,10 +16,10 @@ import net.pl3x.stairs.block.ModBlocks;
 
 import java.util.Random;
 
-public class BlockStairsConcretePowder extends BlockStairsFalling {
+public class StairsConcretePowder extends StairsFalling {
     private final EnumDyeColor color;
 
-    public BlockStairsConcretePowder(EnumDyeColor color) {
+    public StairsConcretePowder(EnumDyeColor color) {
         super(Material.SAND, "stairs_concrete_powder_" + color.getName(), MapColor.getBlockColor(color));
         setSoundType(SoundType.SAND);
         setHardness(0.5F);
@@ -44,7 +44,7 @@ public class BlockStairsConcretePowder extends BlockStairsFalling {
     @Override
     public void onEndFalling(World world, BlockPos pos, IBlockState fallTile, IBlockState state) {
         if (state.getMaterial().isLiquid()) {
-            world.setBlockState(pos, BlockStairsConcrete.getBlock(color).getDefaultState()
+            world.setBlockState(pos, StairsConcrete.getBlock(color).getDefaultState()
                     .withProperty(FACING, fallTile.getValue(FACING))
                     .withProperty(HALF, state.getValue(HALF)), 3);
         }
@@ -55,7 +55,7 @@ public class BlockStairsConcretePowder extends BlockStairsFalling {
             if (facing != EnumFacing.DOWN) {
                 BlockPos pos1 = pos.offset(facing);
                 if (world.getBlockState(pos1).getMaterial() == Material.WATER) {
-                    world.setBlockState(pos, BlockStairsConcrete.getBlock(color).getDefaultState()
+                    world.setBlockState(pos, StairsConcrete.getBlock(color).getDefaultState()
                             .withProperty(FACING, state.getValue(FACING))
                             .withProperty(HALF, state.getValue(HALF)), 3);
                     return true;
@@ -79,7 +79,7 @@ public class BlockStairsConcretePowder extends BlockStairsFalling {
         }
     }
 
-    public static BlockStairsConcretePowder getBlock(EnumDyeColor color) {
+    public static StairsConcretePowder getBlock(EnumDyeColor color) {
         switch (color) {
             case BLACK:
                 return ModBlocks.STAIRS_CONCRETE_POWDER_BLACK;

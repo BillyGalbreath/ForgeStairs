@@ -19,10 +19,10 @@ import net.pl3x.stairs.block.ModBlocks;
 
 import java.util.Random;
 
-public class BlockStairsRedstoneOre extends BlockStairsBasic {
+public class StairsRedstoneOre extends StairsBasic {
     private final boolean isOn;
 
-    public BlockStairsRedstoneOre(String name, boolean isOn) {
+    public StairsRedstoneOre(String name, boolean isOn) {
         super(Material.ROCK, name, MapColor.STONE);
         setSoundType(SoundType.STONE);
         setHardness(3F);
@@ -74,7 +74,7 @@ public class BlockStairsRedstoneOre extends BlockStairsBasic {
         }
     }
 
-    private void setState(World world, BlockPos pos, BlockStairsRedstoneOre type) {
+    private void setState(World world, BlockPos pos, StairsRedstoneOre type) {
         IBlockState state = world.getBlockState(pos);
         world.setBlockState(pos, type.getDefaultState().withProperty(FACING, state.getValue(FACING)));
     }

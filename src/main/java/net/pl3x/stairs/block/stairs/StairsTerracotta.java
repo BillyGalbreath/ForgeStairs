@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class BlockStairsTerracotta extends BlockBase {
+public class StairsTerracotta extends BlockBase {
     private static final Map<EnumDyeColor, MapColor> MAP_COLORS = new HashMap<>();
 
     static {
@@ -42,15 +42,15 @@ public class BlockStairsTerracotta extends BlockBase {
 
     private final EnumDyeColor color;
 
-    public BlockStairsTerracotta() {
+    public StairsTerracotta() {
         this("stairs_terracotta", null);
     }
 
-    public BlockStairsTerracotta(EnumDyeColor color) {
+    public StairsTerracotta(EnumDyeColor color) {
         this("stairs_terracotta_" + color.getName(), color);
     }
 
-    private BlockStairsTerracotta(String name, EnumDyeColor color) {
+    private StairsTerracotta(String name, EnumDyeColor color) {
         super(Material.ROCK, name);
         setSoundType(SoundType.STONE);
         setHardness(1.25F);
@@ -78,7 +78,7 @@ public class BlockStairsTerracotta extends BlockBase {
         return new ItemStack(getBlock(color));
     }
 
-    public static BlockStairsTerracotta getBlock(EnumDyeColor color) {
+    public static StairsTerracotta getBlock(EnumDyeColor color) {
         if (color == null) {
             return ModBlocks.STAIRS_TERRACOTTA;
         }

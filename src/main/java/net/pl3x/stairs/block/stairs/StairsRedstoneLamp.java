@@ -13,10 +13,10 @@ import net.pl3x.stairs.block.ModBlocks;
 
 import java.util.Random;
 
-public class BlockStairsRedstoneLamp extends BlockStairsBasic {
+public class StairsRedstoneLamp extends StairsBasic {
     private final boolean isOn;
 
-    public BlockStairsRedstoneLamp(String name, boolean isOn) {
+    public StairsRedstoneLamp(String name, boolean isOn) {
         super(Material.REDSTONE_LIGHT, name, MapColor.AIR);
         setSoundType(SoundType.GLASS);
         setHardness(0.3F);
@@ -59,7 +59,7 @@ public class BlockStairsRedstoneLamp extends BlockStairsBasic {
         }
     }
 
-    private void setState(World world, BlockPos pos, BlockStairsRedstoneLamp type) {
+    private void setState(World world, BlockPos pos, StairsRedstoneLamp type) {
         IBlockState state = world.getBlockState(pos);
         world.setBlockState(pos, type.getDefaultState().withProperty(FACING, state.getValue(FACING)), 2);
     }

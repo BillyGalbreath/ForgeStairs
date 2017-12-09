@@ -18,8 +18,8 @@ import net.minecraft.world.World;
 import net.pl3x.stairs.block.BlockBase;
 import net.pl3x.stairs.block.ModBlocks;
 
-public class BlockStairsCraftingTable extends BlockBase {
-    public BlockStairsCraftingTable() {
+public class StairsCraftingTable extends BlockBase {
+    public StairsCraftingTable() {
         super(Material.WOOD, "stairs_crafting_table");
         setSoundType(SoundType.WOOD);
         setHardness(2.5F);

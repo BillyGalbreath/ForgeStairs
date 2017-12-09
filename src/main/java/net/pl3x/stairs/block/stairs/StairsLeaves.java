@@ -16,8 +16,8 @@ import net.pl3x.stairs.block.BlockBase;
 
 import java.util.Random;
 
-public class BlockStairsLeaves extends BlockBase {
-    public BlockStairsLeaves(String name) {
+public class StairsLeaves extends BlockBase {
+    public StairsLeaves(String name) {
         super(Material.LEAVES, name);
         setSoundType(SoundType.PLANT);
         setHardness(0.2F);

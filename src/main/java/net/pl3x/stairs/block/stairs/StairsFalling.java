@@ -24,11 +24,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class BlockStairsFalling extends BlockStairsBasic {
+public class StairsFalling extends StairsBasic {
     public static boolean fallInstantly;
     private int dustColor = -16777216;
 
-    public BlockStairsFalling(Material material, String name, MapColor mapColor) {
+    public StairsFalling(Material material, String name, MapColor mapColor) {
         super(material, name, mapColor);
     }
 
@@ -110,24 +110,24 @@ public class BlockStairsFalling extends BlockStairsBasic {
     }
 
     @Override
-    public BlockStairsFalling setSoundType(SoundType sound) {
+    public StairsFalling setSoundType(SoundType sound) {
         super.setSoundType(sound);
         return this;
     }
 
     @Override
-    public BlockStairsFalling setResistance(float resistance) {
+    public StairsFalling setResistance(float resistance) {
         super.setResistance(resistance);
         return this;
     }
 
     @Override
-    public BlockStairsFalling setHardness(float hardness) {
+    public StairsFalling setHardness(float hardness) {
         super.setHardness(hardness);
         return this;
     }
 
-    public BlockStairsFalling setDustColor(int dustColor) {
+    public StairsFalling setDustColor(int dustColor) {
         this.dustColor = dustColor;
         return this;
     }
@@ -174,7 +174,7 @@ public class BlockStairsFalling extends BlockStairsBasic {
 
             if (!world.isRemote) {
                 BlockPos pos1 = new BlockPos(this);
-                boolean isPowderStairs = fallTile.getBlock() instanceof BlockStairsConcretePowder;
+                boolean isPowderStairs = fallTile.getBlock() instanceof StairsConcretePowder;
                 boolean powderTouchingWater = isPowderStairs && world.getBlockState(pos1).getMaterial() == Material.WATER;
                 double d0 = motionX * motionX + motionY * motionY + motionZ * motionZ;
 

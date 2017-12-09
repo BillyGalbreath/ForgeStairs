@@ -27,10 +27,10 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Random;
 
-public class BlockStairsSponge extends BlockBase {
+public class StairsSponge extends BlockBase {
     private final boolean isWet;
 
-    public BlockStairsSponge(String name, boolean isWet) {
+    public StairsSponge(String name, boolean isWet) {
         super(Material.SPONGE, name);
         setSoundType(SoundType.PLANT);
         setHardness(0.6F);
@@ -59,7 +59,7 @@ public class BlockStairsSponge extends BlockBase {
         super.neighborChanged(state, world, pos, block, fromPos);
     }
 
-    private void setState(World world, BlockPos pos, BlockStairsSponge type) {
+    private void setState(World world, BlockPos pos, StairsSponge type) {
         IBlockState state = world.getBlockState(pos);
         world.setBlockState(pos, type.getDefaultState().withProperty(FACING, state.getValue(FACING)), 2);
     }

@@ -16,13 +16,13 @@ import net.pl3x.stairs.block.ModBlocks;
 
 import java.util.Random;
 
-public class BlockStairsWool extends BlockBase {
+public class StairsConcrete extends BlockBase {
     private final EnumDyeColor color;
 
-    public BlockStairsWool(EnumDyeColor color) {
-        super(Material.CLOTH, "stairs_wool_" + color.getName());
-        setSoundType(SoundType.CLOTH);
-        setHardness(0.8F);
+    public StairsConcrete(EnumDyeColor color) {
+        super(Material.ROCK, "stairs_concrete_" + color.getName());
+        setSoundType(SoundType.STONE);
+        setHardness(1.8F);
         this.color = color;
     }
 
@@ -46,41 +46,41 @@ public class BlockStairsWool extends BlockBase {
         return new ItemStack(getBlock(color));
     }
 
-    public static BlockStairsWool getBlock(EnumDyeColor color) {
+    public static StairsConcrete getBlock(EnumDyeColor color) {
         switch (color) {
             case BLACK:
-                return ModBlocks.STAIRS_WOOL_BLACK;
+                return ModBlocks.STAIRS_CONCRETE_BLACK;
             case BLUE:
-                return ModBlocks.STAIRS_WOOL_BLUE;
+                return ModBlocks.STAIRS_CONCRETE_BLUE;
             case BROWN:
-                return ModBlocks.STAIRS_WOOL_BROWN;
+                return ModBlocks.STAIRS_CONCRETE_BROWN;
             case CYAN:
-                return ModBlocks.STAIRS_WOOL_CYAN;
+                return ModBlocks.STAIRS_CONCRETE_CYAN;
             case GRAY:
-                return ModBlocks.STAIRS_WOOL_GRAY;
+                return ModBlocks.STAIRS_CONCRETE_GRAY;
             case GREEN:
-                return ModBlocks.STAIRS_WOOL_GREEN;
+                return ModBlocks.STAIRS_CONCRETE_GREEN;
             case LIGHT_BLUE:
-                return ModBlocks.STAIRS_WOOL_LIGHT_BLUE;
+                return ModBlocks.STAIRS_CONCRETE_LIGHT_BLUE;
             case LIME:
-                return ModBlocks.STAIRS_WOOL_LIME;
+                return ModBlocks.STAIRS_CONCRETE_LIME;
             case MAGENTA:
-                return ModBlocks.STAIRS_WOOL_MAGENTA;
+                return ModBlocks.STAIRS_CONCRETE_MAGENTA;
             case ORANGE:
-                return ModBlocks.STAIRS_WOOL_ORANGE;
+                return ModBlocks.STAIRS_CONCRETE_ORANGE;
             case PINK:
-                return ModBlocks.STAIRS_WOOL_PINK;
+                return ModBlocks.STAIRS_CONCRETE_PINK;
             case PURPLE:
-                return ModBlocks.STAIRS_WOOL_PURPLE;
+                return ModBlocks.STAIRS_CONCRETE_PURPLE;
             case RED:
-                return ModBlocks.STAIRS_WOOL_RED;
+                return ModBlocks.STAIRS_CONCRETE_RED;
             case SILVER:
-                return ModBlocks.STAIRS_WOOL_SILVER;
+                return ModBlocks.STAIRS_CONCRETE_SILVER;
             case YELLOW:
-                return ModBlocks.STAIRS_WOOL_YELLOW;
+                return ModBlocks.STAIRS_CONCRETE_YELLOW;
             case WHITE:
             default:
-                return ModBlocks.STAIRS_WOOL_WHITE;
+                return ModBlocks.STAIRS_CONCRETE_WHITE;
         }
     }
 }

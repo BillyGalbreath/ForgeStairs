@@ -26,10 +26,10 @@ import net.pl3x.stairs.block.ModBlocks;
 
 import java.util.List;
 
-public class BlockStairsNoteblock extends BlockBase implements ITileEntityProvider {
+public class StairsNoteblock extends BlockBase implements ITileEntityProvider {
     private static final List<SoundEvent> INSTRUMENTS = Lists.newArrayList(SoundEvents.BLOCK_NOTE_HARP, SoundEvents.BLOCK_NOTE_BASEDRUM, SoundEvents.BLOCK_NOTE_SNARE, SoundEvents.BLOCK_NOTE_HAT, SoundEvents.BLOCK_NOTE_BASS, SoundEvents.BLOCK_NOTE_FLUTE, SoundEvents.BLOCK_NOTE_BELL, SoundEvents.BLOCK_NOTE_GUITAR, SoundEvents.BLOCK_NOTE_CHIME, SoundEvents.BLOCK_NOTE_XYLOPHONE);
 
-    public BlockStairsNoteblock() {
+    public StairsNoteblock() {
         super(Material.WOOD, "stairs_noteblock");
         setSoundType(SoundType.WOOD);
         setHardness(0.8F);

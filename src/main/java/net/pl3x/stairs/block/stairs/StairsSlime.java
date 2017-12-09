@@ -15,8 +15,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.pl3x.stairs.block.BlockBase;
 
-public class BlockStairsSlime extends BlockBase {
-    public BlockStairsSlime() {
+public class StairsSlime extends BlockBase {
+    public StairsSlime() {
         super(Material.CLAY, "stairs_slime");
         setSoundType(SoundType.SLIME);
         setDefaultSlipperiness(0.8F);

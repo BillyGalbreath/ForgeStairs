@@ -10,8 +10,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.pl3x.stairs.block.BlockBase;
 
-public class BlockStairsHay extends BlockBase {
-    public BlockStairsHay() {
+public class StairsHay extends BlockBase {
+    public StairsHay() {
         super(Material.GRASS, "stairs_hay");
         setSoundType(SoundType.PLANT);
         setHardness(0.5F);

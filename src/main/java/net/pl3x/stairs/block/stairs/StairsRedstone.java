@@ -9,8 +9,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.pl3x.stairs.block.BlockBase;
 
-public class BlockStairsRedstone extends BlockBase {
-    public BlockStairsRedstone() {
+public class StairsRedstone extends BlockBase {
+    public StairsRedstone() {
         super(Material.IRON, "stairs_redstone");
         setSoundType(SoundType.METAL);
         setHardness(5F);

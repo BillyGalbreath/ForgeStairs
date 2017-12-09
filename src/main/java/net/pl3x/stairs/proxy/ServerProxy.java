@@ -11,7 +11,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.pl3x.stairs.block.ModBlocks;
-import net.pl3x.stairs.block.stairs.BlockStairsJukebox;
+import net.pl3x.stairs.block.stairs.StairsJukebox;
 
 public class ServerProxy {
     public void init(FMLInitializationEvent event) {
@@ -33,8 +33,8 @@ public class ServerProxy {
         if (state.getBlock() != ModBlocks.STAIRS_JUKEBOX) {
             return;
         }
-        BlockStairsJukebox jukebox = (BlockStairsJukebox) state.getBlock();
-        if (state.getValue(BlockStairsJukebox.HAS_RECORD)) {
+        StairsJukebox jukebox = (StairsJukebox) state.getBlock();
+        if (state.getValue(StairsJukebox.HAS_RECORD)) {
             jukebox.dropRecord(event.getWorld(), event.getPos(), state);
             return;
         }
