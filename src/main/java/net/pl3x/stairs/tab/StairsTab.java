@@ -48,6 +48,8 @@ public class StairsTab extends CreativeTabs {
         LIST.add(ModBlocks.STAIRS_HAY);
         LIST.add(ModBlocks.STAIRS_PUMPKIN);
         LIST.add(ModBlocks.STAIRS_MELON);
+        LIST.add(ModBlocks.STAIRS_MUSHROOM_BROWN);
+        LIST.add(ModBlocks.STAIRS_MUSHROOM_RED);
         LIST.add(ModBlocks.STAIRS_TNT);
         LIST.add(ModBlocks.STAIRS_NOTEBLOCK);
         LIST.add(ModBlocks.STAIRS_JUKEBOX);

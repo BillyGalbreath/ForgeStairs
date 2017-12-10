@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "M  ",
+    "MM ",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:red_mushroom_block"
+    }
+  },
+  "result": {
+    "item": "stairs:stairs_mushroom_red",
+    "count": 4
+  }
+}

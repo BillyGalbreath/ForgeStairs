@@ -139,6 +139,8 @@ public class ModBlocks {
     public static final StairsBasic STAIRS_LOG_SPRUCE = new StairsBasic(Material.WOOD, "stairs_log_spruce", MapColor.OBSIDIAN).setHardness(2F).setSoundType(SoundType.WOOD);
     public static final StairsMagma STAIRS_MAGMA = new StairsMagma();
     public static final StairsBasic STAIRS_MELON = new StairsBasic(Material.GOURD, "stairs_melon", MapColor.LIME).setHardness(1.0F).setSoundType(SoundType.WOOD);
+    public static final StairsBasic STAIRS_MUSHROOM_BROWN = new StairsBasic(Material.WOOD, "stairs_mushroom_brown", MapColor.DIRT).setHardness(0.2F).setSoundType(SoundType.WOOD);
+    public static final StairsBasic STAIRS_MUSHROOM_RED = new StairsBasic(Material.WOOD, "stairs_mushroom_red", MapColor.RED).setHardness(0.2F).setSoundType(SoundType.WOOD);
     public static final StairsMycelium STAIRS_MYCELIUM = new StairsMycelium();
     public static final StairsBasic STAIRS_NETHERRACK = new StairsBasic(Material.ROCK, "stairs_netherrack", MapColor.NETHERRACK).setHardness(0.4F).setSoundType(SoundType.STONE);
     public static final StairsBasic STAIRS_NETHER_WART = new StairsBasic(Material.GRASS, "stairs_nether_wart", MapColor.RED).setHardness(1F).setSoundType(SoundType.WOOD);
