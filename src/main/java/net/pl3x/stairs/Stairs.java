@@ -18,7 +18,8 @@ import net.pl3x.stairs.block.ModBlocks;
 import net.pl3x.stairs.proxy.ServerProxy;
 import net.pl3x.stairs.recipe.DummyRecipe;
 
-@Mod(modid = Stairs.modId, name = Stairs.name, version = Stairs.version)
+@Mod(modid = Stairs.modId, name = Stairs.name, version = Stairs.version,
+        updateJSON = "http://pl3x.net/versions/stairs.json")
 public class Stairs {
     public static final String modId = "stairs";
     public static final String name = "Stairs";
