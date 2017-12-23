@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 import net.pl3x.stairs.block.ModBlocks;
@@ -25,6 +26,11 @@ public class Stairs {
 
     @SidedProxy(serverSide = "net.pl3x.stairs.proxy.ServerProxy", clientSide = "net.pl3x.stairs.proxy.ClientProxy")
     public static ServerProxy proxy;
+
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        proxy.preInit(event);
+    }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {

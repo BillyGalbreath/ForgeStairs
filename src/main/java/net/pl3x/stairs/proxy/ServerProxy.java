@@ -9,11 +9,15 @@ import net.minecraft.util.EnumHand;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.pl3x.stairs.block.ModBlocks;
 import net.pl3x.stairs.block.stairs.StairsJukebox;
 
 public class ServerProxy {
+    public void preInit(FMLPreInitializationEvent event) {
+    }
+
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
     }

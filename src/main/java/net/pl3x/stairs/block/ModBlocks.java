@@ -30,6 +30,7 @@ import net.pl3x.stairs.block.stairs.StairsRedstoneOre;
 import net.pl3x.stairs.block.stairs.StairsSlime;
 import net.pl3x.stairs.block.stairs.StairsSoulSand;
 import net.pl3x.stairs.block.stairs.StairsSponge;
+import net.pl3x.stairs.block.stairs.StairsTNT;
 import net.pl3x.stairs.block.stairs.StairsTerracotta;
 import net.pl3x.stairs.block.stairs.StairsWool;
 import net.pl3x.stairs.tab.StairsTab;
@@ -193,7 +194,7 @@ public class ModBlocks {
     public static final StairsTerracotta STAIRS_TERRACOTTA_SILVER = new StairsTerracotta(EnumDyeColor.SILVER);
     public static final StairsTerracotta STAIRS_TERRACOTTA_WHITE = new StairsTerracotta(EnumDyeColor.WHITE);
     public static final StairsTerracotta STAIRS_TERRACOTTA_YELLOW = new StairsTerracotta(EnumDyeColor.YELLOW);
-    public static final StairsBasic STAIRS_TNT = new StairsBasic(Material.TNT, "stairs_tnt", MapColor.TNT).setHardness(0.0F).setSoundType(SoundType.PLANT);
+    public static final StairsTNT STAIRS_TNT = new StairsTNT();
     public static final StairsWool STAIRS_WOOL_BLACK = new StairsWool(EnumDyeColor.BLACK);
     public static final StairsWool STAIRS_WOOL_BLUE = new StairsWool(EnumDyeColor.BLUE);
     public static final StairsWool STAIRS_WOOL_BROWN = new StairsWool(EnumDyeColor.BROWN);
